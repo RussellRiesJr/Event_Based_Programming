@@ -13,7 +13,7 @@ var articleEl = document.getElementsByClassName("article-section");
 
 function handleSectionClick(MouseEvent) {
   var elementText = MouseEvent.target.innerHTML;
-  outputEl.innerHTML += "You clicked on the " + elementText + " section";
+  outputEl.innerHTML = "You clicked on the " + elementText + " section";
 }
 
 for (var i = 0; i < articleEl.length; i++) {
@@ -25,6 +25,17 @@ for (var i = 0; i < articleEl.length; i++) {
   "page-header", and attach an event handler for the
   mouseover, and mouseout, events.
  */
+
+var header = document.getElementById("page-header");
+
+function handleHeaderMouseOver(event) {
+  outputEl.innerHTML = "You're poking me, you jerk!";
+}
+
+function handleHeaderMouseOut(event) {
+  outputEl.innerHTML = "That's much better!";
+}
+
 header.addEventListener("mouseover", handleHeaderMouseOver);
 header.addEventListener("mouseout", handleHeaderMouseOut);
 
@@ -37,6 +48,9 @@ header.addEventListener("mouseout", handleHeaderMouseOut);
  */
 var fieldEl = document.getElementById("keypress-input");
 
+fieldEl.addEventListener("keyup", function(event) {
+  outputEl.innerHTML = event.target.value
+});
 
 /*
   Now we can start making a truly interactive experience
