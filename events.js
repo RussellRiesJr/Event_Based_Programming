@@ -1,0 +1,1 @@
+var outputEl = document.getElementById("output-target");
